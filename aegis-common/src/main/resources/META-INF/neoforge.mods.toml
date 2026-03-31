@@ -1,0 +1,17 @@
+modLoader = "javafml"
+loaderVersion = "[1,)"
+license = "ARR"
+FMLModType = "LIBRARY"
+
+[[mods]]
+modId = "aegis_common"
+version = "1.0-SNAPSHOT"
+displayName = "Aegis: Common"
+description = "Shared library for Aegis mods."
+
+[[dependencies.aegis_common]]
+modId = "neoforge"
+type = "required"
+versionRange = "[21,)"
+ordering = "NONE"
+side = "BOTH"

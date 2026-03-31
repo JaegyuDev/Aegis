@@ -1,0 +1,13 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "dev.jaegyu.aegis.hearth.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [],
+  "client": [
+    "ModMismatchScreenMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
