@@ -14,6 +14,8 @@ neoForge {
 
 jar {
     manifest {
-        attributes('FMLModType': 'LIBRARY')
+        attributes(
+                'Automatic-Module-Name': 'dev.jaegyu.aegis.common'
+        )
     }
 }

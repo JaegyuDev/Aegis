@@ -29,6 +29,6 @@ side = "BOTH"
 [[dependencies."${mod_id}"]]
 modId = "aegis_bulwark"
 type = "optional"
-versionRange = "[1,)"
+versionRange = "[1.0-SNAPSHOT,)"
 ordering = "NONE"
 side = "BOTH"

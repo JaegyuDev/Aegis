@@ -20,14 +20,10 @@ public record BulwarkHandshakeTask(ServerConfigurationPacketListener listener) i
             listener.finishCurrentTask(TYPE);
             return;
         }
-
-        // Only send to NeoForge clients — vanilla clients won't have a handler for this payload.
-        // Registered as optional so vanilla clients aren't rejected just for missing it.
         if (!listener.getConnectionType().isNeoForge()) {
             listener.finishCurrentTask(TYPE);
             return;
         }
-
         sender.accept(new BulwarkHandshakePayload(BulwarkConfig.SERVER.packDownloadUrl.get())
                 .toVanillaClientbound());
         listener.finishCurrentTask(TYPE);

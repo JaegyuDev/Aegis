@@ -1,7 +1,6 @@
 modLoader = "javafml"
 loaderVersion = "[1,)"
 license = "ARR"
-FMLModType = "LIBRARY"
 
 [[mods]]
 modId = "aegis_common"

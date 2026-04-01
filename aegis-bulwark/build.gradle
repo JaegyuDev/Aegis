@@ -52,15 +52,12 @@ neoForge {
             sourceSet(project(':aegis-common').sourceSets.main)
         }
     }
-
-    jarJar.setEnabled(true);
 }
 
 sourceSets.main.resources { srcDir 'src/generated/resources' }
 
 dependencies {
     compileOnly project(':aegis-common')
-    jarJar files(project(':aegis-common').tasks.named('jar'))
 }
 
 var generateModMetadata = tasks.register("generateModMetadata", ProcessResources) {
