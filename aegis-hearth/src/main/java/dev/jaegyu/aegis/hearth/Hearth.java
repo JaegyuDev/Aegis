@@ -1,8 +1,10 @@
+// aegis-hearth/src/main/java/dev/jaegyu/aegis/hearth/Hearth.java
 package dev.jaegyu.aegis.hearth;
 
 import dev.jaegyu.aegis.common.network.BulwarkHandshakePayload;
 import dev.jaegyu.aegis.hearth.commands.HearthCommand;
 import dev.jaegyu.aegis.hearth.commands.HomeCommand;
+import dev.jaegyu.aegis.hearth.datagen.HearthDatagen;
 import dev.jaegyu.aegis.hearth.listener.*;
 import dev.jaegyu.aegis.hearth.listener.migrations.HarvestingKeyMigration;
 import net.neoforged.bus.api.IEventBus;
@@ -19,6 +21,7 @@ public class Hearth {
         container.registerConfig(ModConfig.Type.SERVER, HearthConfig.SERVER_SPEC);
 
         modBus.addListener(this::onRegisterPayloads);
+        modBus.register(new HearthDatagen());
 
         var homeCommand = new HomeCommand();
         var hearthCommand = new HearthCommand();
@@ -29,6 +32,7 @@ public class Hearth {
         NeoForge.EVENT_BUS.register(new HarvestingListener());
         NeoForge.EVENT_BUS.register(new ArmorStandListener());
         NeoForge.EVENT_BUS.register(new HarvestingKeyMigration());
+        NeoForge.EVENT_BUS.register(new HeartFireworkListener());
         NeoForge.EVENT_BUS.register(homeCommand);
         NeoForge.EVENT_BUS.register(hearthCommand);
     }
