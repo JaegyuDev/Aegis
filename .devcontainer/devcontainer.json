@@ -1,0 +1,12 @@
+{
+  "name": "Aegis Dev",
+  "image": "eclipse-temurin:21-jdk-jammy",
+  "mounts": [
+    "source=aegis-gradle-cache,target=/root/.gradle,type=volume",
+    "source=${localEnv:HOME}/.gitconfig,target=/root/.gitconfig,type=bind,readonly"
+  ],
+  "postCreateCommand": "chmod +x ./gradlew && ./gradlew dependencies --no-daemon -q",
+  "remoteEnv": {
+    "GRADLE_OPTS": "-Xmx4g -Xms512m -XX:MaxMetaspaceSize=512m"
+  }
+}
